@@ -12,7 +12,7 @@ const Nav = () => {
   };
 
   return (
-    <div className='w-full p-4 flex items-center justify-between'>
+    <div className='w-full flex items-center justify-between'>
       <h1>Logo</h1>
       <button onClick={handleTheme}>{theme}</button>
     </div>
