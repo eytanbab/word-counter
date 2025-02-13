@@ -22,7 +22,7 @@ const LetterDensity = ({ charFreq, charactersCount }: Props) => {
       {letterDensity.map(([char, count]) => (
         <div className="flex w-full items-center gap-2">
           {/* Letter */}
-          <span className="w-[2ch]">{char}</span>
+          <span className="w-[2ch] text-center">{char}</span>
           <div className="relative h-4 w-full rounded-full bg-slate-300 dark:bg-slate-700">
             <div
               style={{
