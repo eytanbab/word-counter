@@ -1,4 +1,7 @@
 import { useEffect, useState } from "react";
+import CharacterCounter from "./characters-counter";
+import WordsCounter from "./words-counter";
+import SentencesCounter from "./sentences-counter";
 
 type Props = {
   text: string;
@@ -37,24 +40,18 @@ const Insights = ({ text, includeSpace, characterLimit }: Props) => {
     <div className="flex w-full flex-col gap-4">
       <div className="flex w-full flex-col gap-4">
         {/* Character counter */}
-        <div className="flex h-36 w-full flex-col justify-center self-start rounded-md bg-fuchsia-300 p-4 text-slate-950">
-          <span className="text-7xl font-bold">{charactersCount}</span>
-          <span className="text-lg">Total characters</span>
-        </div>
+        <CharacterCounter
+          charactersCount={charactersCount}
+          characterLimit={characterLimit}
+        />
         {/* Word counter */}
-        <div className="flex h-36 w-full flex-col justify-center self-start rounded-md bg-orange-300 p-4 text-slate-950">
-          <span className="text-7xl font-bold">{wordsCount}</span>
-          <span className="text-lg">Word Count</span>
-        </div>
+        <WordsCounter wordsCount={wordsCount} />
         {/* Sentences counter */}
-        <div className="flex h-36 w-full flex-col justify-center self-start rounded-md bg-red-300 p-4 text-slate-950">
-          <span className="text-7xl font-bold">{sentencesCount}</span>
-          <span className="text-lg">Sentence Count</span>
-        </div>
+        <SentencesCounter sentencesCount={sentencesCount} />
         {/* Letter Density */}
         <div className="w-full">
           <h1 className="text-lg font-bold">Letter Density</h1>
-          {text ? (
+          {charFreq ? (
             Object.entries(charFreq)
               .sort((a, b) => b[1] - a[1])
               .map(([char, count]) => (
