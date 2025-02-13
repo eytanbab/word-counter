@@ -14,7 +14,9 @@ export const useCharacterFrequency = (text: string, includeSpace: boolean) => {
 
   useEffect(() => {
     const characterFrequencies = (text: string) => {
-      const charArray = String(text?.match(/\w+/g)).split("");
+      const charArray = String(text?.match(/\w+/g))
+        .toLocaleLowerCase()
+        .split("");
       const frequency = charArray.reduce((acc: FreqMap, char: string) => {
         if (char != ",") {
           acc[char] = (acc[char] || 0) + 1;
