@@ -10,7 +10,7 @@ const Insights = ({ text, includeSpace, characterLimit }: Props) => {
     : text.replace(/\s/g, "").length;
 
   const wordsCount = text.match(/\w+/g)?.length ?? 0;
-  const sentencesCount = 0;
+  const sentencesCount = text.match(/[\w|\)][.?!](\s|$)/g)?.length ?? 0;
 
   return (
     <div className="flex w-full flex-col gap-4">
