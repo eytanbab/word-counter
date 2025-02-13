@@ -21,7 +21,7 @@ const Input = ({
   return (
     <div className="flex w-full flex-col items-center gap-4">
       <textarea
-        className="h-96 w-full resize-none rounded-md bg-slate-200 px-4 py-2 focus:outline-2 focus:outline-slate-400 dark:bg-slate-900 dark:focus:outline-slate-700"
+        className="h-96 w-full resize-none rounded-md bg-slate-200 px-4 py-2 focus:outline-2 focus:outline-slate-400 dark:bg-slate-900/60 dark:focus:outline-slate-700"
         onChange={(e) => handleText(e)}
         value={text}
         placeholder="type / paste anything..."
