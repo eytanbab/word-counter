@@ -1,5 +1,3 @@
-import React from "react";
-
 type Props = {
   charFreq: Record<string, number>;
   charactersCount: number;
