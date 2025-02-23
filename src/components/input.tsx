@@ -1,5 +1,6 @@
 import { ChangeEvent } from "react";
 import Checkbox from "./checkbox";
+import { useCharacterFrequency } from "../hooks/useCharacterFrequency";
 
 type Props = {
   text: string;
@@ -10,6 +11,8 @@ type Props = {
   handleCharacterLimitChange: () => void;
 };
 
+const WPM = 183;
+
 const Input = ({
   text,
   handleText,
@@ -18,6 +21,28 @@ const Input = ({
   handleIncludeSpaceChange,
   handleCharacterLimitChange,
 }: Props) => {
+  const { wordsCount } = useCharacterFrequency(text, includeSpace);
+
+  function secondsToTime(wordsCount: number) {
+    // calculate average reading time in seconds (2.5 min => 150 seconds)
+    const avgReadingTime = (wordsCount / WPM) * 60;
+
+    const h = Math.floor(avgReadingTime / 3600)
+        .toString()
+        .padStart(2, "0"),
+      m = Math.floor((avgReadingTime % 3600) / 60)
+        .toString()
+        .padStart(2, "0"),
+      s = Math.floor(avgReadingTime % 60)
+        .toString()
+        .padStart(2, "0");
+
+    return h + ":" + m + ":" + s;
+    //return `${h}:${m}:${s}`;
+  }
+
+  const avgReadingTime = secondsToTime(wordsCount);
+
   return (
     <div className="flex w-full flex-col items-center gap-4">
       <textarea
@@ -26,6 +51,10 @@ const Input = ({
         value={text}
         placeholder="type / paste anything..."
       />
+      {/* Avg reading time */}
+      <div className="self-end text-sm text-slate-300">
+        <h6>Avg. reading time: {avgReadingTime}</h6>
+      </div>
 
       {/* Checkboxes */}
       <div className="flex w-full flex-col gap-2">
