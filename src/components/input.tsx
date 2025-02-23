@@ -52,9 +52,10 @@ const Input = ({
         placeholder="type / paste anything..."
       />
       {/* Avg reading time */}
-      <div className="self-end text-sm text-slate-300">
-        <h6>Avg. reading time: {avgReadingTime}</h6>
-      </div>
+
+      <p className="self-end text-sm text-slate-500 dark:text-slate-400">
+        Avg. reading time: {avgReadingTime}
+      </p>
 
       {/* Checkboxes */}
       <div className="flex w-full flex-col gap-2">
