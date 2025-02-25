@@ -1,50 +1,56 @@
-# React + TypeScript + Vite
+# Word Counter Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview
+The Word Counter Website is a simple and efficient tool that allows users to write or paste text into a text area and instantly see various text statistics. The website provides the following features:
 
-Currently, two official plugins are available:
+- Character count
+- Word count
+- Sentence count
+- Average reading time
+- Most common characters
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This project is built using **React** and **Tailwind CSS** for a responsive and modern user experience.
 
-## Expanding the ESLint configuration
+## Features
+- **Live text analysis**: Updates word, character, and sentence counts in real-time.
+- **Reading time estimation**: Calculates the average reading time based on the word count.
+- **Common character analysis**: Displays the most frequently used characters in the text.
+- **Clean and responsive UI**: Styled with Tailwind CSS for a seamless user experience.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Technologies Used
+- **React**: For building the interactive UI.
+- **Tailwind CSS**: For styling and responsiveness.
 
-- Configure the top-level `parserOptions` property like this:
+## Installation
+To run the project locally, follow these steps:
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+1. Clone the repository:
+   ```sh
+   git clone https://github.com/eytabab/word-counter.git
+   ```
+2. Navigate to the project directory:
+   ```sh
+   cd word-counter
+   ```
+3. Install dependencies:
+   ```sh
+   npm install
+   ```
+4. Start the development server:
+   ```sh
+   npm start
+   ```
+5. Open your browser and go to `http://localhost:3000` to use the application.
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## Usage
+1. Open the website.
+2. Type or paste any text into the text area.
+3. Instantly view the text statistics displayed below the text area.
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+## Future Improvements
+- Add support for different reading speeds.
+- Implement text analysis for readability scores.
+- Provide additional insights like keyword density.
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+## Contributing
+Contributions are welcome! If you'd like to improve the project, feel free to fork the repository, make changes, and submit a pull request.
