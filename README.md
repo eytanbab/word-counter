@@ -1,4 +1,4 @@
-# Word Counter Website
+# Word Counter
 
 ## Overview
 The Word Counter Website is a simple and efficient tool that allows users to write or paste text into a text area and instantly see various text statistics. The website provides the following features:
@@ -40,7 +40,7 @@ To run the project locally, follow these steps:
    ```sh
    npm start
    ```
-5. Open your browser and go to `http://localhost:3000` to use the application.
+5. Open your browser and go to `http://localhost:5176` to use the application.
 
 ## Usage
 1. Open the website.
