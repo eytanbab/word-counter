@@ -26,7 +26,7 @@ To run the project locally, follow these steps:
 
 1. Clone the repository:
    ```sh
-   git clone https://github.com/eytabab/word-counter.git
+   git clone https://github.com/eytanbab/word-counter.git
    ```
 2. Navigate to the project directory:
    ```sh
